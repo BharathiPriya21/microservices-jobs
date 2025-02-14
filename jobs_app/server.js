@@ -9,7 +9,8 @@ const jobApplyRoute=require('../jobs_app/src/routes/jobApply.routes')
 
 const app=express()
 
-app.use(express.json())
+app.use(express.json());
+const PORT=3000;
 
 app.use("/api/admins",adminRoute);
 app.use('/api/jobs',jobRoute);
