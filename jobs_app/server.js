@@ -18,9 +18,12 @@ app.use('/api/interviews',interviewRoute);
 app.use('/api/jobapply',jobApplyRoute)
 
 //listen method used to start the server to listen the encrypted connection
-app.listen(3000,()=>
-{
+// app.listen(3000,()=>
+// {
 
-    console.log("running.................")
+//     console.log("running.................")
 
-})
+// })
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`✅ Server running on port ${PORT}`);
+});
