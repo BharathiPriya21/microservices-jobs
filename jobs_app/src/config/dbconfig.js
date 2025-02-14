@@ -33,7 +33,8 @@ const db=new Client({
     user:process.env.USER,
     port:process.env.PORT,
     password:process.env.PASSWORD ,
-    database:process.env.DATABASE 
+    database:process.env.DATABASE,
+    ssl: { rejectUnauthorized: false } 
 });
 const connectdb=async()=>{
     db.connect()
