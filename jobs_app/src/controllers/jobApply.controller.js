@@ -6,7 +6,7 @@ const nodemailer = require("nodemailer");
 //createapply
 const createJobApply=async(req,res)=>
 {
-    const{candidate_id,job_id,candidate_name,email,phone,address,experience,school_name,college,cgpa,yop,resume_url,candidates_status}=req.body;
+    const{candidate_id,job_id,candidate_name,email,phone,address,experience,school_name,college,cgpa,yop,candidates_status}=req.body;
     try{
         const ByEmail= await db.query(queries.findByEmail,[job_id,email]);
 
