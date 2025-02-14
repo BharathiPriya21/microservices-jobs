@@ -9,9 +9,7 @@ const candidateByJobId="select * from job_apply where job_id=$1 ";
 const getAllCandidates="select * from candidates";
 const getAllJobs="select job_id,job_title,job_description,salary from jobs"
 
-const findByEmail="select job_id from job_apply where job_id = $1 AND email = $2";
-
-
+const findByEmail="select job_id from job_apply where job_id = $1 AND email = $2"
 
 module.exports = {
     getJobApply,

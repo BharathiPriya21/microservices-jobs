@@ -2,7 +2,6 @@
 //import jsonwebtoken pck ,used to create and verfiy the json webtoken 
 //used to implement authentication and authorization
 const jwt =require('jsonwebtoken');
-
 // middle ware function for authorization with 3 parameter req(incoming request),res(sen the res back),next(callback func(move the request to the next middleware or route))
  const authMiddleware=(req,res,next)=>
  {

@@ -3,7 +3,6 @@ const queries=require('../models/jobApply.model');
 require('dotenv').config();
 const nodemailer = require("nodemailer");
 
-
 //createapply
 const createJobApply=async(req,res)=>
 {
@@ -14,7 +13,6 @@ const createJobApply=async(req,res)=>
         if (ByEmail.rows.length > 0) {
           
             return res.status(400).json({ message: "You have already applied for this job "});
-            
         }
 
         //insert if candidate not  applied for that job
@@ -220,35 +218,6 @@ const getAllCandidatesWithJob = async (req, res) => {
 };
 
 
-//uploads files
-// const applyJob = async (req, res) => {
-//     try {
-//         console.log("Inside applyJob Controller");
-//         console.log("Request Body:", req.body);
-//         console.log("Uploaded File:", req.file);
-
-//         if (!req.file) {
-//             return res.status(400).json({ message: "No file uploaded!" });
-//         }
-
-//         const { candidate_name, job_id } = req.body;
-//         const resume = req.file.buffer; // Store as binary
-
-//         const result = await pool.query(
-//             "INSERT INTO job_apply (candidate_name, job_id, resume) VALUES ($1, $2, $3) RETURNING *",
-//             [candidate_name, job_id, resume]
-//         );
-
-//         res.status(200).json({
-//             message: "Job application submitted successfully!",
-//             data: result.rows[0],
-//         });
-//     } catch (error) {
-//         console.error("Error applying for job:", error);
-//         res.status(500).json({ error: "Internal Server Error" });
-//     }
-// };
-
 module.exports=
 {
     createJobApply,
@@ -257,8 +226,7 @@ module.exports=
     updateJobApply,
     deleteJobApply,
     getCandidateByJobId,
-    getAllCandidatesWithJob,
-    // applyJob
+    getAllCandidatesWithJob
 }
 
 
