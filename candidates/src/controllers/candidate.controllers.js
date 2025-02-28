@@ -1,5 +1,5 @@
 const db=require('../config/dbconfig');
-const queries=require('../models/candidates.model');
+const queries=require('../models/candidate.models');
 require('dotenv').config();
 
 //createcanditaes
@@ -130,15 +130,6 @@ const candidateStatus=async(req,res)=>
         return res.status(200).json(result.rows)
     })
 }
-
-
-
-
-
-
-
-
-
 
 
 

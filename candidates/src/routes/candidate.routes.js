@@ -16,7 +16,7 @@
 
 
 const { Router } = require("express");
-const candidateController = require("../controllers/candidates.controllers");
+const candidateController = require("../controllers/candidate.controllers");
 const authenticateLoginAdmin = require("../middlewares/auth.middleware");
 
 const router = Router();
