@@ -1,6 +1,6 @@
 const express=require('express');
-const db=require ("../jobs_app/src/config/dbconfig");
-const adminRoute=require("../jobs_app/src/routes/admin.routes");
+const db=require ("./src/config/dbconfig");
+const adminRoute=require("./src/routes/admin.routes");
 // const jobRoute=require('../jobs_app/src/routes/jobs.routes');
 // const candidateRoute=require('../jobs_app/src/routes/candidates.routes');
 // const interviewRoute=require('../jobs_app/src/routes/interviews.routes');

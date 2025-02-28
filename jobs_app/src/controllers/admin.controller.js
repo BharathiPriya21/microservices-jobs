@@ -56,6 +56,52 @@ const loginAdmin = async (req, res) => {
     }
 };
 
+
+
+
+// const loginAdmin = async (req, res) => {
+//     const { email, password } = req.body;
+//     console.log("Login request received:", email);
+
+//     try {
+      
+//         const { rows } = await db.query(queries.getAdminByEmail, [email]);
+//         console.log("Database query executed:", rows);
+
+        
+//         if (rows.length === 0) {
+//             console.log("No user found");
+//             return res.status(400).json({ message: "User not found" });
+//         }
+
+        
+//         const admin = rows[0];
+//         console.log("User found:", admin.email);
+
+       
+//         const decryptedPassword = CryptoJS.AES.decrypt(admin.password, process.env.SECRET_KEY).toString(CryptoJS.enc.Utf8);
+//         console.log("Decrypted Password:", decryptedPassword);
+
+       
+//         if (password !== decryptedPassword) {
+//             console.log("Invalid login attempt");
+//             return res.status(400).json({ message: "Invalid login details" });
+//         }
+
+        
+//         const token = jwt.sign(
+//             { admin_id: admin.admin_id, email: admin.email },
+//             process.env.JWT_SECRET,
+//             { expiresIn: "2h" }
+//         );
+
+//         console.log("Token generated:", token);
+//         return res.status(200).json({ message: "Login successful", token });
+//     } catch (error) {
+//         console.error("Error:", error);
+//         return res.status(500).json({ message: "Server error", error: error.message });
+//     }
+// };
 //postAdmin
 const createAdmin=async(req,res)=>
 {

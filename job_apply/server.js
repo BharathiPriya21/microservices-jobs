@@ -1,10 +1,10 @@
 const express=require('express');
-const db=require ("../jobs_app/src/config/dbconfig");
+const db=require ("./src/config/dbconfig");
 // const adminRoute=require("../jobs_app/src/routes/admin.routes");
-// const jobRoute=require('../jobs_app/src/routes/jobs.routes');
+const jobRoute=require('./src/routes/job.routes');
 // const candidateRoute=require('../jobs_app/src/routes/candidates.routes');
 // const interviewRoute=require('../jobs_app/src/routes/interviews.routes');
-const jobApplyRoute=require('../jobs_app/src/routes/jobApply.routes')
+const jobApplyRoute=require('./src/routes/jobApply.routes')
 //console.log("Loaded ENV Variables:", process.env.CLOUDINARY_CLOUD_NAME, process.env.CLOUDINARY_API_KEY);
 
 
@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 const PORT=3004;
 
 // app.use("/api/admins",adminRoute);
-// app.use('/api/jobs',jobRoute);
+app.use('/api/jobs',jobRoute);
 // app.use('/api/candidates',candidateRoute);
 // app.use('/api/interviews',interviewRoute);
 app.use('/api/jobapply',jobApplyRoute);

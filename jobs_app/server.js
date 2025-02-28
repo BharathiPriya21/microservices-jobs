@@ -5,18 +5,20 @@ const jobRoute=require('../jobs_app/src/routes/jobs.routes');
 const candidateRoute=require('../jobs_app/src/routes/candidates.routes');
 const interviewRoute=require('../jobs_app/src/routes/interviews.routes');
 const jobApplyRoute=require('../jobs_app/src/routes/jobApply.routes')
+//console.log("Loaded ENV Variables:", process.env.CLOUDINARY_CLOUD_NAME, process.env.CLOUDINARY_API_KEY);
 
 
 const app=express()
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true })); 
 const PORT=3000;
 
 app.use("/api/admins",adminRoute);
 app.use('/api/jobs',jobRoute);
 app.use('/api/candidates',candidateRoute);
 app.use('/api/interviews',interviewRoute);
-app.use('/api/jobapply',jobApplyRoute)
+app.use('/api/jobapply',jobApplyRoute);
 
 //listen method used to start the server to listen the encrypted connection
 // app.listen(3000,()=>
@@ -26,5 +28,5 @@ app.use('/api/jobapply',jobApplyRoute)
 
 // })
 app.listen(PORT, '0.0.0.0', () => {
-    console.log(`✅ Server running on port ${PORT}`);
+    console.log(` Server running on port ${PORT}`);
 });

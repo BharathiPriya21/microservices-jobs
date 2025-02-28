@@ -41,10 +41,21 @@
 //     .catch(err => console.error("connection failed :",err));
 // }
 // connectdb();
+
 const Pool = require("pg").Pool;
+//console.log("Cloudinary API Key:", process.env.CLOUDINARY_API_KEY);
+
+// console.log("Cloudinary Config:");
+// console.log("CLOUDINARY_CLOUD_NAME:", process.env.CLOUDINARY_CLOUD_NAME);
+// console.log("CLOUDINARY_API_KEY:", process.env.CLOUDINARY_API_KEY ? "Loaded" : "Not Found");
+// console.log("CLOUDINARY_API_SECRET:", process.env.CLOUDINARY_API_SECRET ? "Loaded" : "Not Found");
+
 const pool = new Pool({
 
   connectionString:"postgresql://jobs_portal:scGBQkddHMyAHc6VPFYe5C382KzLuggg@dpg-cumt8gdsvqrc73fl1ip0-a.oregon-postgres.render.com/jobs_vl9f",
+  // cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  // api_key: process.env.CLOUDINARY_API_KEY,
+  // api_secret: process.env.CLOUDINARY_API_SECRET,
   //connectionString:'postgres://lte_db_render_sep_user:21zkOw98bM4G0RGcPxDkuFQDN0TCQG1l@dpg-ck5e4v0n715c73b6g2kg-a.singapore-postgres.render.com/lte_db_render_sep',
   ssl: { rejectUnauthorized: false },
 });
