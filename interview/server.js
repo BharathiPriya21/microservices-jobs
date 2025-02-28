@@ -27,6 +27,10 @@ app.use('/api/interviews',interviewRoute);
 //     console.log("running.................")
 
 // })
+app.get("/",(req,res)=>
+    {
+        return res.status(200).json("interview server connected");
+    })
 app.listen(PORT, '0.0.0.0', () => {
     console.log(` Server running on port ${PORT} for interview`);
 });
