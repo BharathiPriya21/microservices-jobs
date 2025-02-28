@@ -11,7 +11,7 @@
 // module.exports=router;
 
 const { Router } = require('express');
-const interviewController = require('../controllers/interviews.controller');
+const interviewController = require('../controllers/interview.controllers');
 const authenticateLoginAdmin = require('../middlewares/auth.middleware');
 
 const router = Router();

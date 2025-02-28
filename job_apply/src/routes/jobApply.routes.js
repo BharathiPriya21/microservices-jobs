@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const jobApplyController = require('../controllers/jobApply.controller');
+const jobApplyController = require('../controllers/jobApply.controllers');
 const uploadPdf = require('../middlewares/upload.middleware'); 
 
 const router = Router();
