@@ -1,5 +1,5 @@
 const db=require('../config/dbconfig');
-const queries=require('../models/interviews.model');
+const queries=require('../models/interview.models');
 require('dotenv').config();
 
 //createinterview
