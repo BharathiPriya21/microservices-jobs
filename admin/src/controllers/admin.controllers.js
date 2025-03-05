@@ -39,17 +39,17 @@ const loginAdmin = async (req, res) => {
         }
 
       //jwt is created using jwt.sign()
-        const token = jwt.sign(
+        const token = await jwt.sign(
             //the token contains admin id and email
             { admin_id: admin.admin_id, email: admin.email },
             //secret key stored in env
             process.env.JWT_SECRET,
             //the token exires in 2hr
-            { expiresIn: "2h" },  
+            // { expiresIn: "2h" },  
         );
 
         console.log("Token generated:", token);
-       return res.status(200).json({ message: "Login successful", token });
+       return res.status(200).json({ message: "Login successful", token:token });
     } catch (error) {
         console.error("Error:", error);
        return res.status(500).json({ message: "Server error", error: error.message });
